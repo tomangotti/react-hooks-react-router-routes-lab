@@ -5,9 +5,31 @@ import Home from "./Home";
 import Actors from "./Actors";
 import Directors from "./Directors";
 import Movies from "./Movies";
+import { movies } from "../data";
 
 function App() {
-  return <div>{/*{code here}*/}</div>;
+
+  console.log(movies)
+
+
+  return <div>
+    <NavBar />
+    <Switch>
+      <Route exact path="/movies">
+        <Movies />
+      </Route>
+      <Route exact path="/directors">
+        <Directors />
+      </Route>
+      <Route exact path="/actors">
+        <Actors />
+      </Route>
+      <Route exact path="/">
+        <Home />
+      </Route>
+    </Switch>
+  </div>;
 }
 
 export default App;
+
